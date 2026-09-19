@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="冒险岛橄榄石专区，提供冒险岛橄榄石装备属性详解、获取途径、属性搭配建议及装备强化指南。">
+    <meta name="keywords" content="冒险岛橄榄石, 冒险岛装备, 冒险岛属性, 冒险岛强化, 冒险岛攻略">
+    <title>冒险岛橄榄石-装备属性详解与获取途径指南</title>
+    <style>
+        :root {
+            --primary-color: #f0c040;
+            --primary-hover: #d4a530;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --accent-blue: #4a90e2;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a90e2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #333;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Attribute List */
+        .attr-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .attr-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .attr-item:last-child {
+            border-bottom: none;
+        }
+
+        .attr-name {
+            font-weight: 600;
+        }
+
+        .attr-val {
+            color: var(--text-secondary);
+        }
+
+        .highlight-val {
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+
+        /* Sidebar */
+        aside .card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+        }
+
+        aside h3 {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .guide-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .guide-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Images */
+        .img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-placeholder.large {
+            height: 300px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Nav */
+        @media (max-width: 600px) {
+            nav ul {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+            冒险岛<span>攻略</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">装备图鉴</a></li>
+                <li><a href="#">属性计算</a></li>
+                <li><a href="#">强化指南</a></li>
+                <li><a href="#">社区论坛</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>冒险岛橄榄石</h1>
+        <p>全面解析冒险岛游戏中橄榄石装备的属性、获取方式以及在不同职业中的搭配建议。</p>
+        <a href="#attributes" class="btn">查看详细属性</a>
+    </section>
+
+    <div class="container">
+        <!-- Overview Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-value">+6%</span>
+                <span class="stat-label">全属性</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">30%</span>
+                <span class="stat-label">暴击率</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">稀有</span>
+                <span class="stat-label">掉落等级</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">多职业</span>
+                <span class="stat-label">适用范围</span>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <!-- Main Content -->
+            <section id="attributes">
+                <div class="section-title">装备属性详解</div>
+                
+                <article>
+                    <div class="img-placeholder large" style="background-image: linear-gradient(to right, #4a90e2, #8bc34a);"></div>
+                    <h2>什么是冒险岛橄榄石？</h2>
+                    <p>橄榄石是冒险岛游戏中一种具有特殊属性的装备或饰品。它通常以其独特的绿色调外观和均衡的属性加成而受到玩家关注。与单纯的攻击力装备不同，橄榄石往往侧重于提供稳定的生存能力或辅助属性，适合追求稳健输出的玩家。</p>
+                    <br>
+                    <h3>核心属性分析</h3>
+                    <p>该装备的主要优势在于其<strong>属性随机性</strong>。在获取装备后，玩家可以通过鉴定系统改变其基础属性倾向。以下是该装备常见的属性构成：</p>
+                    
+                    <div class="attr-list">
+                        <div class="attr-item">
+                            <span class="attr-name">力量/智力/敏捷/幸运</span>
+                            <span class="attr-val highlight-val">+6% 全属性</span>
+                        </div>
+                        <div class="attr-item">
+                            <span class="attr-name">物理/魔法攻击力</span>
+                            <span class="attr-val highlight-val">+45 - 80</span>
+                        </div>
+                        <div class="attr-item">
+                            <span class="attr-name">暴击伤害</span>
+                            <span class="attr-val highlight-val">+30%</span>
+                        </div>
+                        <div class="attr-item">
+                            <span class="attr-name">移动速度</span>
+                            <span class="attr-val highlight-val">+2</span>
+                        </div>
+                        <div class="attr-item">
+                            <span class="attr-name">防御力</span>
+                            <span class="attr-val highlight-val">+10</span>
+                        </div>
+                    </div>
+
+                    <br>
+                    <h3>适用职业与场景</h3>
+                    <p>由于属性加成较为均衡，冒险岛橄榄石在以下场景中表现尤为出色：</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; color: var(--text-secondary);">
+                        <li><strong>刷图练级：</strong> 高防御和全属性加成有助于提高刷图效率。</li>
+                        <li><strong>转职过渡：</strong> 对于处于转职阶段的职业，提供稳定的属性提升。</li>
+                        <li><strong>特定流派：</strong> 搭配暴击流装备时，能显著提升爆发伤害。</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="card">
+                    <h3>获取途径</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">橄榄石通常通过以下活动或副本掉落：</p>
+                    <ul class="guide-list">
+                        <li>特定等级区域BOSS</li>
+                        <li>节日限定活动副本</li>
+                        <li>稀有怪物掉落</li>
+                        <li>商城兑换（限时）</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>强化建议</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">强化该装备时请注意以下风险：</p>
+                    <ul class="guide-list">
+                        <li>强化等级越高，失败概率越大。</li>
+                        <li>建议使用保护券以保留强化等级。</li>
+                        <li>强化成功后属性可能发生质变。</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>热门装备对比</h3>
+                    <p style="font-size: 0.9rem; color: #666;">相较于红宝石与蓝宝石，橄榄石在均衡性上更胜一筹。</p>
+                </div>
+            </aside>
+        </div>
+
+        <div class="section-title">常见问题 (FAQ)</div>
+        <div style="display: grid; gap: 16px;">
+            <details style="background: var(--card-bg); padding: 16px; border-radius: var(--border-radius); cursor: pointer;">
+                <summary style="font-weight: 600; list-style: none;">橄榄石装备可以交易吗？</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary);">大部分普通掉落的橄榄石装备属于绑定状态，无法交易。仅限节日活动或特殊渠道获取的版本可能支持交易。</p>
+            </details>
+            <details style="background: var(--card-bg); padding: 16px; border-radius: var(--border-radius); cursor: pointer;">
+                <summary style="font-weight: 600; list-style: none;">如何提升橄榄石的基础属性？</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary);">可以通过装备鉴定、镶嵌宝石或使用强化卷轴来提升装备的基础数值。此外，使用特定的祝福石也有几率提升属性。</p>
+            </details>
+            <details style="background: var(--card-bg); padding: 16px; border-radius: var(--border-radius); cursor: pointer;">
+                <summary style="font-weight: 600; list-style: none;">哪个职业最适合使用？</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary);">由于属性加成较为全面，适合所有物理和魔法职业。对于缺乏生存能力的职业，它是一个很好的补充。</p>
+            </details>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2023 冒险岛装备攻略站. All rights reserved.</p>
+    <p>本站内容仅供玩家参考，不涉及官方运营内容。</p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
