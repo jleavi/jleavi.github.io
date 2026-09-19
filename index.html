@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="溏心风暴花好月圆 - TVB经典剧集资料库。收录剧集剧情简介、主要角色介绍、经典台词、分集剧情及幕后花絮。提供高清剧照、剧照下载及观影指南。">
+    <meta name="keywords" content="溏心风暴花好月圆,TVB剧集,林文龙,叶璇,曹众,经典港剧,TVB剧情">
+    <title>溏心风暴花好月圆 - TVB经典剧集资料与观影指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d35400; /* 暖橙色，呼应“心”与“团圆” */
+            --secondary-color: #2c3e50; /* 深蓝灰色，代表稳重与商业背景 */
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/tvbshow/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Layout */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            position: relative;
+            color: var(--secondary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        /* Intro & Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Cast Section */
+        .cast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .cast-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cast-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cast-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .cast-info {
+            padding: 15px;
+        }
+
+        .cast-name {
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .cast-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: static;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>📺</span> TVB剧集库
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">剧集列表</a></li>
+                    <li><a href="#">演员表</a></li>
+                    <li><a href="#">经典台词</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>溏心风暴花好月圆</h1>
+            <p>2008年TVB万千星辉颁奖典礼“最佳剧集”金奖作品。讲述钟氏家族在商业利益与亲情之间的纠葛，以及一段跨越身份的凄美爱情。</p>
+            <a href="#intro" class="btn">探索剧情</a>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <main>
+            <!-- 剧情简介 -->
+            <section id="intro">
+                <h2 class="section-title">剧集简介</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>故事背景</h3>
+                        <p>故事承接上一部《溏心风暴》，时间跨度数年。钟氏集团面临严峻挑战，大宅内的明争暗斗从未停止。在商业利益与亲情伦理的拉锯战中，各人面临前所未有的考验。</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>核心看点</h3>
+                        <p>本剧不仅延续了上一部的高水准演技，更引入了全新的角色和情感纠葛。主角在家族责任与个人幸福之间艰难抉择，剧情紧凑，高潮迭起，探讨了现代家庭关系的复杂性与包容。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 经典台词 -->
+            <section>
+                <h2 class="section-title">经典台词</h2>
+                <div class="quote-section">
+                    <p class="quote-text">“做人最紧要就是开心，做人最紧要就是开心。”</p>
+                    <p class="quote-author">—— 乐文（常妈）</p>
+                </div>
+                <div class="quote-section" style="background: linear-gradient(135deg, #e67e22, #f39c12); margin-top: 20px;">
+                    <p class="quote-text">“虽然我们身份不同，但我的心意是一样的。”</p>
+                    <p class="quote-author">—— 高皓明</p>
+                </div>
+            </section>
+
+            <!-- 主要演员 -->
+            <section>
+                <h2 class="section-title">主要演员</h2>
+                <div class="cast-grid">
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/actor1/300/400" alt="林文龙" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">林文龙</span>
+                            <span class="cast-role">饰 高皓明</span>
+                        </div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/actor2/300/400" alt="叶璇" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">叶璇</span>
+                            <span class="cast-role">饰 林汀汀</span>
+                        </div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/actor3/300/400" alt="曹众" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">曹众</span>
+                            <span class="cast-role">饰 乐文</span>
+                        </div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/actor4/300/400" alt="陈豪" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">陈豪</span>
+                            <span class="cast-role">饰 钟景淮</span>
+                        </div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/actor5/300/400" alt="商天娥" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">商天娥</span>
+                            <span class="cast-role">饰 钟秀琴</span>
+                        </div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://picsum.photos/seed/actor6/300/400" alt="杨茜尧" class="cast-img">
+                        <div class="cast-info">
+                            <span class="cast-name">杨茜尧</span>
+                            <span class="cast-role">饰 沈卓盈</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 观看指南 -->
+            <section>
+                <h2 class="section-title">观看指南</h2>
+                <div class="info-card" style="margin-bottom: 20px;">
+                    <h3>📺 观看渠道</h3>
+                    <p>本剧为经典TVB剧集，目前可通过各大正版流媒体平台（如优酷、腾讯视频、爱奇艺）的港剧专区进行在线观看或点播。部分电视台的老电影频道也会定期重播。</p>
+                </div>
+                <div class="info-card">
+                    <h3>📖 剧集评价</h3>
+                    <p>作为《溏心风暴》系列的第二部作品，本剧在口碑上依然保持了高水准。观众普遍认为其剧情逻辑严密，人物塑造丰满，特别是关于“家庭责任”与“个人追求”的探讨具有现实意义。</p>
+                </div>
+            </section>
+        </main>
+
+        <aside>
+            <div class="sidebar-widget">
+                <h3>🏷️ 剧集标签</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">TVB</a>
+                    <a href="#" class="tag">林文龙</a>
+                    <a href="#" class="tag">叶璇</a>
+                    <a href="#" class="tag">陈豪</a>
+                    <a href="#" class="tag">曹众</a>
+                    <a href="#" class="tag">商天娥</a>
+                    <a href="#" class="tag">经典港剧</a>
+                    <a href="#" class="tag">家庭伦理</a>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>📅 相关推荐</h3>
+                <ul style="font-size: 0.9rem; color: var(--text-light);">
+                    <li style="margin-bottom: 10px;"><a href="#">溏心风暴 (第一部)</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#">法证先锋 II</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#">珠光宝气</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#">溏心风暴之家好月圆</a></li>
+                    <li><a href="#">宫心计</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>📢 剧集资讯</h3>
+                <p style="font-size: 0.9rem; color: var(--text-light);">本站致力于收录TVB经典剧集资料，不提供任何盗版资源下载。</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    本站是一个专注于TVB经典剧集的资料整理平台。我们致力于为港剧爱好者提供准确、详尽的剧情介绍、角色分析和观看指南。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">剧集大全</a></li>
+                    <li><a href="#">演员阵容</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="font-size: 0.9rem;">分享经典，重温美好时光。</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 TVB剧集资料库. All Rights Reserved. 本站内容仅供学习与交流使用，版权归原作者所有。</p>
+        </div>
+    </footer>
+
+</body>
+              </html>
