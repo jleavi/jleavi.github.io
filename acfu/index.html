@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acfun赛门-中国二次元文化社区与内容聚合平台</title>
+    <meta name="description" content="Acfun赛门是中国领先的二次元文化社区，提供ACG动画、漫画、游戏、影视解说及直播服务。这里有最热的二次元资讯、原创UP主视频及互动社区讨论。">
+    <meta name="keywords" content="acfun赛门,AcFun,A站,二次元,弹幕视频,动漫,漫画,游戏,直播">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-bg: #1a1a1a;
+            --card-bg: #252525;
+            --text-main: #ffffff;
+            --text-sub: #b0b0b0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            color: var(--text-main);
+            outline: none;
+        }
+
+        .search-bar button {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 0 16px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(26,26,26,0.3), var(--dark-bg)), url('https://picsum.photos/seed/acfunhero/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 60px;
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            width: 100%;
+        }
+
+        .hero-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 2px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin-bottom: 24px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: #ff5252;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .more-link {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .more-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .card-thumb {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #333;
+        }
+
+        .card-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255,255,255,0.8);
+        }
+
+        .play-icon::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent white;
+            margin-left: 4px;
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .danmaku-count {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .danmaku-count::before {
+            content: '💬';
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--dark-bg);
+        }
+
+        .carousel-item {
+            min-width: 200px;
+            height: 120px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .carousel-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .carousel-item span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+
+        /* Live & Community Section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .live-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .live-item {
+            display: flex;
+            gap: 16px;
+            background: var(--card-bg);
+            padding: 12px;
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        .live-avatar {
+            width: 80px;
+            height: 60px;
+            border-radius: 4px;
+            background: #333;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .live-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .live-info {
+            flex: 1;
+        }
+
+        .live-title {
+            font-size: 15px;
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+        }
+
+        .live-user {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .live-status {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 4px 8px;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .sidebar-box {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 10px;
+        }
+
+        .topic-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 12px;
+        }
+
+        .topic-list li:last-child {
+            border-bottom: none;
+        }
+
+        .topic-list a {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .topic-list span {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+            
+            .nav-links {
+                margin: 10px 0;
+                gap: 16px;
+                font-size: 14px;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .hero {
+                height: 350px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .split-section {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Acfun赛门</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">动画</a>
+                <a href="#">番剧</a>
+                <a href="#">漫画</a>
+                <a href="#">游戏</a>
+                <a href="#">直播</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索视频、番剧、UP主...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">热门推荐</span>
+            <h1>ACFun赛门：年轻人的二次元文化聚集地</h1>
+            <p>在这里发现最热血的番剧、最有趣的鬼畜视频、最硬核的游戏解说以及最真实的弹幕互动体验。Acfun赛门，不止于看，更在于玩。</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">立即浏览热门</button>
+                <button class="btn btn-secondary">观看直播</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Recommended Carousel -->
+        <section class="carousel-section">
+            <div class="section-header">
+                <h2 class="section-title">热门专题</h2>
+                <a href="#" class="more-link">查看全部 ></a>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/seed/anime1/200/120" alt="专题封面">
+                    <span>新番追番指南</span>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/seed/game2/200/120" alt="专题封面">
+                    <span>2024年度游戏大赏</span>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/seed/movie3/200/120" alt="专题封面">
+                    <span>经典动画回顾</span>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/seed/tech4/200/120" alt="专题封面">
+                    <span>数码科技测评</span>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/seed/dance5/200/120" alt="专题封面">
+                    <span>舞见日常</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">最新投稿</h2>
+                <div class="filter-tags">
+                    <a href="#" style="color: white; margin-right: 10px;">全部</a>
+                    <a href="#" style="color: var(--text-sub);">动画</a>
+                    <a href="#" style="color: var(--text-sub);">鬼畜</a>
+                    <a href="#" style="color: var(--text-sub);">游戏</a>
+                </div>
+            </div>
+            <div class="video-grid">
+                <article class="video-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/video1/400/225" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">【ACFun赛门】2024年最期待的动画新番盘点，这些必看！</h3>
+                        <div class="card-meta">
+                            <span>2.3万次播放</span>
+                            <span class="danmaku-count">1.2万弹幕</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/video2/400/225" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">深度解析：为什么ACFun赛门依然保持着独特的社区文化？</h3>
+                        <div class="card-meta">
+                            <span>5.6万次播放</span>
+                            <span class="danmaku-count">3.4万弹幕</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/video3/400/225" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">【鬼畜全明星】当各种梗遇上ACFun赛门，笑出腹肌</h3>
+                        <div class="card-meta">
+                            <span>12万次播放</span>
+                            <span class="danmaku-count">8.9万弹幕</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/video4/400/225" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">硬核玩家评测：赛门平台上的独立游戏推荐合集</h3>
+                        <div class="card-meta">
+                            <span>8000次播放</span>
+                            <span class="danmaku-count">4500弹幕</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/video5/400/225" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">原创手书：献给所有热爱ACFun赛门的你</h3>
+                        <div class="card-meta">
+                            <span>3.1万次播放</span>
+                            <span class="danmaku-count">2.1万弹幕</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/video6/400/225" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">ACFun赛门新人UP主扶持计划，你的才华不容埋没</h3>
+                        <div class="card-meta">
+                            <span>9000次播放</span>
+                            <span class="danmaku-count">5200弹幕</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Live & Topics Split -->
+        <section class="split-section">
+            <div>
+                <div class="section-header">
+                    <h2 class="section-title">正在直播</h2>
+                    <a href="#" class="more-link">更多直播 ></a>
+                </div>
+                <div class="live-list">
+                    <div class="live-item">
+                        <div class="live-avatar">
+                            <img src="https://picsum.photos/seed/avatar1/160/120" alt="主播头像">
+                        </div>
+                        <div class="live-info">
+                            <div class="live-title">【深夜档】和朋友们一起聊天，偶尔打游戏</div>
+                            <div class="live-user">UP主：深夜电台</div>
+                        </div>
+                        <div class="live-status">直播中</div>
+                    </div>
+                    <div class="live-item">
+                        <div class="live-avatar">
+                            <img src="https://picsum.photos/seed/avatar2/160/120" alt="主播头像">
+                        </div>
+                        <div class="live-info">
+                            <div class="live-title">【技术流】绝地求生：吃鸡教学与实战复盘</div>
+                            <div class="live-user">UP主：吃鸡大神</div>
+                        </div>
+                        <div class="live-status">直播中</div>
+                    </div>
+                    <div class="live-item">
+                        <div class="live-avatar">
+                            <img src="https://picsum.photos/seed/avatar3/160/120" alt="主播头像">
+                        </div>
+                        <div class="live-info">
+                            <div class="live-title">【游戏】塞尔达传说：旷野之息全收集进度</div>
+                            <div class="live-user">UP主：旅行者</div>
+                        </div>
+                        <div class="live-status">直播中</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="sidebar-box">
+                    <h3 class="sidebar-title">热门话题</h3>
+                    <ul class="topic-list">
+                        <li>
+                            <a href="#">#ACFun赛门新番推荐#</a>
+                            <span>话题热度: 23.5万</span>
+                        </li>
+                        <li>
+                            <a href="#">#我的二次元日常#</a>
+                            <span>话题热度: 18.2万</span>
+                        </li>
+                        <li>
+                            <a href="#">#鬼畜调教教程#</a>
+                            <span>话题热度: 15.6万</span>
+                        </li>
+                        <li>
+                            <a href="#">#游戏开箱测评#</a>
+                            <span>话题热度: 12.1万</span>
+                        </li>
+                        <li>
+                            <a href="#">#今日份快乐源泉#</a>
+                            <span>话题热度: 9.8万</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-box" style="margin-top: 24px;">
+                    <h3 class="sidebar-title">热门排行榜</h3>
+                    <ul class="topic-list">
+                        <li>
+                            <a href="#">1. 动画区 - 热门新番</a>
+                        </li>
+                        <li>
+                            <a href="#">2. 鬼畜区 - 全明星</a>
+                        </li>
+                        <li>
+                            <a href="#">3. 游戏 - 综合推荐</a>
+                        </li>
+                        <li>
+                            <a href="#">4. 影视 - 经典回顾</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Community/About Section -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">关于AcFun赛门</h2>
+            </div>
+            <article style="color: var(--text-sub); font-size: 15px; line-height: 1.8;">
+                <p><strong>ACFun赛门</strong>是一个以弹幕视频为特色的二次元文化社区。自创立以来，我们致力于为用户提供最纯粹的ACG（动画、漫画、游戏）内容体验。无论是原创视频制作、同人创作，还是专业的游戏解说、影视分析，ACFun赛门都汇聚了全国各地的爱好者。</p>
+                <br>
+                <p>在这里，每一帧画面都有弹幕相伴，每一次观看都是一次互动。我们相信，独特的社区文化和活跃的用户创作才是二次元平台的灵魂。欢迎加入ACFun赛门，与百万同好一起，创造属于我们的记忆。</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 16px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span style="color:white">Acfun赛门</span>
+                </div>
+                <p style="color: #666; font-size: 13px; line-height: 1.6;">
+                    ACG二次元文化社区<br>
+                    弹幕视频分享平台<br>
+                    发现视频，分享生活
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">公司简介</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>内容分类</h4>
+                <ul>
+                    <li><a href="#">动画番剧</a></li>
+                    <li><a href="#">漫画专区</a></li>
+                    <li><a href="#">游戏中心</a></li>
+                    <li><a href="#">直播大厅</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">会员等级</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">社区规范</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Acfun赛门 ACG社区. All Rights Reserved. 
+        </div>
+    </footer>
+
+</body>
+                          </html>
