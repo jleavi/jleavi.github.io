@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9uu有你有我足矣官网 - 沉浸式二次元互动社区与同人创作平台</title>
+    <meta name="description" content="9uu有你有我足矣官网提供丰富的二次元同人漫画、原创小说及互动社区服务。加入我们，分享你的创作，发现志同道合的伙伴，体验“有你有我足矣”的温暖社区氛围。">
+    <meta name="keywords" content="9uu有你有我足矣官网,9uu,二次元,同人漫画,同人小说,互动社区,原创平台">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-sub);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #2d3436;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #636e72;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: var(--transition);
+        }
+
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+
+        /* 特色板块 */
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* 漫画/内容展示 */
+        .content-showcase {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: var(--text-sub);
+            padding: 8px 16px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -21px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .content-card {
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .content-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+
+        .card-cover {
+            width: 100%;
+            height: 260px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+            transition: var(--transition);
+        }
+
+        .content-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .read-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .tag {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        /* 社区/动态 */
+        .community {
+            padding: 80px 0;
+            background: var(--bg-color);
+        }
+
+        .community-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 20px;
+        }
+
+        .topic-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #eee;
+            flex-shrink: 0;
+        }
+
+        .topic-content h4 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .topic-content p {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .topic-footer {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #b2bec3;
+        }
+
+        .topic-footer span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .sidebar-box {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-box h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background: var(--bg-color);
+            color: var(--text-sub);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background: #fd79a8; color: white; }
+        .rank-list li:nth-child(2) .rank-num { background: #fab1a0; color: white; }
+        .rank-list li:nth-child(3) .rank-num { background: #ffeaa7; color: #d63031; }
+
+        .rank-title {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* CTA 区域 */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #2d3436;
+            color: #b2bec3;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-top: 40px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                margin: 0 auto 30px;
+            }
+
+            .nav-links {
+                display: none; /* 简化移动端展示 */
+            }
+
+            .community-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 头部导航 -->
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="var(--primary-color)"/>
+                </svg>
+                9uu<span>有你有我足矣</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">漫画专区</a>
+                <a href="#">同人小说</a>
+                <a href="#">原创工坊</a>
+                <a href="#">活动社区</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-tag">WELCOME TO 9UU</span>
+                <h1>发现热爱，<br><span>有你有我足矣</span></h1>
+                <p>这里是二次元爱好者的精神家园。汇聚万千原创漫画、精彩同人小说与实时互动社区。无论你是创作者还是阅读者，在这里都能找到属于你的那份共鸣与陪伴。</p>
+                <div style="display: flex; gap: 15px;">
+                    <button class="btn btn-primary">开始探索</button>
+                    <button class="btn btn-outline" style="color: white; border-color: white;">加入社区</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/seed/animegirl/500/600" alt="二次元插画展示">
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能 -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>为什么选择 9uu</h2>
+                <p>全方位的二次元内容生态体验</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>海量原创漫画</h3>
+                    <p>汇聚独立画师与同人创作者，提供高清连载与独家番外。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>文字创作空间</h3>
+                    <p>支持轻小说、短篇故事发布，拥有完善的章节管理与评论系统。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>活跃互动社区</h3>
+                    <p>实时弹幕、话题讨论、同好聚会，让阅读不再孤单。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>创作者扶持计划</h3>
+                    <p>优质内容将获得流量推荐与收益分成，让才华被更多人看见。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门内容展示 -->
+    <section class="content-showcase">
+        <div class="container">
+            <div class="section-title">
+                <h2>热门推荐</h2>
+                <p>本周最受关注的原创与同人作品</p>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active">全部</button>
+                <button class="tab-btn">日系漫画</button>
+                <button class="tab-btn">国漫同人</button>
+                <button class="tab-btn">轻小说</button>
+            </div>
+
+            <div class="content-grid">
+                <!-- 卡片 1 -->
+                <div class="content-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/manga1/300/400" alt="作品封面">
+                        <div class="card-overlay">
+                            <span class="read-btn">立即阅读</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">星河彼岸的约定</div>
+                        <div class="card-meta">
+                            <span>科幻 / 冒险</span>
+                            <span class="tag">连载中</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="content-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/manga2/300/400" alt="作品封面">
+                        <div class="card-overlay">
+                            <span class="read-btn">立即阅读</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">校园青春物语</div>
+                        <div class="card-meta">
+                            <span>日常 / 校园</span>
+                            <span class="tag">已完结</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="content-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/manga3/300/400" alt="作品封面">
+                        <div class="card-overlay">
+                            <span class="read-btn">立即阅读</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">暗夜猎手</div>
+                        <div class="card-meta">
+                            <span>悬疑 / 恐怖</span>
+                            <span class="tag">热门</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卡片 4 -->
+                <div class="content-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/manga4/300/400" alt="作品封面">
+                        <div class="card-overlay">
+                            <span class="read-btn">立即阅读</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">奇幻森林日记</div>
+                        <div class="card-meta">
+                            <span>童话 / 奇幻</span>
+                            <span class="tag">连载中</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-outline">查看更多作品</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社区动态 -->
+    <section class="community">
+        <div class="container">
+            <div class="section-title">
+                <h2>社区动态</h2>
+                <p>和志同道合的小伙伴一起交流</p>
+            </div>
+            <div class="community-layout">
+                <div class="topic-list">
+                    <div class="topic-card">
+                        <img src="https://picsum.photos/seed/avatar1/100/100" class="topic-avatar" alt="用户头像">
+                        <div class="topic-content">
+                            <h4>【讨论】大家觉得最新的番外篇结局怎么样？</h4>
+                            <p>刚看完第45话，感觉编剧最后的反转有点出乎意料，大家怎么看？有没有剧透预警？</p>
+                            <div class="topic-footer">
+                                <span>👤 赛博朋克007</span>
+                                <span>💬 128 回复</span>
+                                <span>👁️ 3.5k 浏览</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-card">
+                        <img src="https://picsum.photos/seed/avatar2/100/100" class="topic-avatar" alt="用户头像">
+                        <div class="topic-content">
+                            <h4>【招募】寻找画师合作《异世界转生》同人本</h4>
+                            <p>我是写手，擅长轻小说风格，想找一位画师一起制作一本同人本，有兴趣的请私信我。</p>
+                            <div class="topic-footer">
+                                <span>👤 墨水先生</span>
+                                <span>💬 56 回复</span>
+                                <span>👁️ 1.2k 浏览</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-card">
+                        <img src="https://picsum.photos/seed/avatar3/100/100" class="topic-avatar" alt="用户头像">
+                        <div class="topic-content">
+                            <h4>【分享】我的手绘板绘画心得分享</h4>
+                            <p>从零开始学板绘的一个月总结，分享一些关于线稿和上色的技巧，希望能帮到新手。</p>
+                            <div class="topic-footer">
+                                <span>👤 绘梦师</span>
+                                <span>💬 89 回复</span>
+                                <span>👁️ 2.1k 浏览</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <aside>
+                    <div class="sidebar-box">
+                        <h3>热门榜单</h3>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-num">1</span>
+                                <span class="rank-title">全职法师同人志</span>
+                            </li>
+                            <li>
+                                <span class="rank-num">2</span>
+                                <span class="rank-title">我的英雄学院：归零</span>
+                            </li>
+                            <li>
+                                <span class="rank-num">3</span>
+                                <span class="rank-title">原神：提瓦特编年史</span>
+                            </li>
+                            <li>
+                                <span class="rank-num">4</span>
+                                <span class="rank-title">哈利波特：黑魔法防御术</span>
+                            </li>
+                            <li>
+                                <span class="rank-num">5</span>
+                                <span class="rank-title">进击的巨人：最终章</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>准备好加入我们了吗？</h2>
+            <p>现在注册即可获得新人专属积分礼包，开启你的二次元创作之旅。</p>
+            <button class="btn" style="background: white; color: var(--primary-color);">免费注册账号</button>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 20px; display: inline-block;">
+                        9uu有你有我足矣
+                    </a>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        致力于打造最优质的二次元同人创作与分享平台。让每一个热爱动漫的你，都能在这里找到归属感。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>平台导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">漫画分类</a></li>
+                        <li><a href="#">小说专区</a></li>
+                        <li><a href="#">创作者中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">关于9uu</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">官方微信</a></li>
+                        <li><a href="#">Discord社群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 9uu有你有我足矣. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
