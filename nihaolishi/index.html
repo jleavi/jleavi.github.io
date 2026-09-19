@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="你好历史君 - 深度解析历史事件、人物传记与文化脉络。提供通俗易懂的历史科普、朝代兴衰复盘及历史冷知识，带您穿越时空，读懂中国与世界的历史真相。">
+    <meta name="keywords" content="你好历史君,历史科普,中国历史,世界历史,历史人物,朝代更替,历史冷知识">
+    <title>你好历史君-中国历史科普与人物传记深度解析平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #F4A460;
+            --bg-color: #FAFAFA;
+            --card-bg: #FFFFFF;
+            --text-main: #2C2C2C;
+            --text-secondary: #666666;
+            --border-color: #E0E0E0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #6d360f;
+            border-color: #6d360f;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            margin-left: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            outline: none;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 250px;
+            border-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Category Nav */
+        .category-nav {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.5rem 0;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-item a {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .category-item a.active, .category-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-item a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Article Card */
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-category {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .card-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #eee;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-color);
+        }
+
+        .rank-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+
+        .rank-link:hover {
+            text-decoration: underline;
+        }
+
+        .hot-tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .hot-tag {
+            background-color: #fff5eb;
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .hot-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Feature Section */
+        .feature-section {
+            background-color: #fff;
+            padding: 3rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .feature-item:hover {
+            background-color: var(--bg-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-layout {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+            nav ul {
+                margin: 1rem 0;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">你好历史君<span>你好历史君</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">历史人物</a></li>
+                <li><a href="#">朝代兴衰</a></li>
+                <li><a href="#">世界历史</a></li>
+                <li><a href="#">历史解密</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="search-box">
+                <input type="text" placeholder="搜索历史事件或人物...">
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="category-nav">
+    <div class="container">
+        <ul class="category-list">
+            <li class="category-item"><a href="#" class="active">综合推荐</a></li>
+            <li class="category-item"><a href="#">中国通史</a></li>
+            <li class="category-item"><a href="#">世界文明</a></li>
+            <li class="category-item"><a href="#">名人传记</a></li>
+            <li class="category-item"><a href="#">历史解密</a></li>
+            <li class="category-item"><a href="#">历史冷知识</a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="hero">
+    <div class="container hero-content">
+        <h1>用现代视角，解读千年历史</h1>
+        <p>你好历史君致力于为您提供最通俗易懂的历史科普内容。从帝王将相到市井百态，带您领略历史的波澜壮阔与人性幽微。</p>
+        <div class="hero-tags">
+            <span class="tag">三国演义</span>
+            <span class="tag">唐朝盛世</span>
+            <span class="tag">二战风云</span>
+            <span class="tag">历史真相</span>
+        </div>
+        <a href="#" class="btn btn-primary">开始阅读</a>
+    </div>
+</section>
+
+<main class="container">
+    <div class="grid-layout">
+        <!-- Main Articles -->
+        <div class="main-content">
+            <h2 class="section-title">深度历史解读</h2>
+            
+            <article class="article-card">
+                <div class="card-image">
+                    <span class="card-category">朝代兴衰</span>
+                    <img src="https://picsum.photos/seed/history1/400/250" alt="唐朝历史">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">2023-10-24 · 作者：历史观察员</div>
+                    <h3 class="card-title"><a href="#">大唐盛世背后的隐忧：安史之乱如何改变了历史走向？</a></h3>
+                    <p class="card-excerpt">安史之乱不仅终结了唐朝的盛极而衰，更深刻地改变了中国的政治格局、经济重心以及民族融合的进程。本文将深入剖析这场动乱的前因后果。</p>
+                    <div class="card-footer">
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span>阅读 2.4w</span>
+                        </div>
+                        <a href="#" class="btn-outline" style="padding: 2px 8px; font-size: 0.8rem;">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="card-image">
+                    <span class="card-category">世界历史</span>
+                    <img src="https://picsum.photos/seed/history2/400/250" alt="二战历史">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">2023-10-22 · 作者：环球视野</div>
+                    <h3 class="card-title"><a href="#">二战转折点：斯大林格勒战役的残酷与战略意义</a></h3>
+                    <p class="card-excerpt">斯大林格勒战役是第二次世界大战的转折点，也是人类历史上最血腥的战役之一。这场战役如何重塑了欧洲乃至世界的政治版图？</p>
+                    <div class="card-footer">
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span>阅读 1.8w</span>
+                        </div>
+                        <a href="#" class="btn-outline" style="padding: 2px 8px; font-size: 0.8rem;">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="card-image">
+                    <span class="card-category">历史人物</span>
+                    <img src="https://picsum.photos/seed/history3/400/250" alt="王阳明">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">2023-10-20 · 作者：国学研习社</div>
+                    <h3 class="card-title"><a href="#">知行合一：王阳明心学的现代启示</a></h3>
+                    <p class="card-excerpt">王阳明不仅是明朝的一代大儒，更是一位杰出的军事家。他的“心学”思想穿越时空，在当今社会依然具有极高的现实指导意义。</p>
+                    <div class="card-footer">
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span>阅读 3.1w</span>
+                        </div>
+                        <a href="#" class="btn-outline" style="padding: 2px 8px; font-size: 0.8rem;">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" class="btn btn-primary">加载更多文章</a>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门榜单</h3>
+                <ul class="rank-list">
+                    <li>
+                        <span class="rank-num">1</span>
+                        <a href="#" class="rank-link">秦始皇统一六国的真正原因</a>
+                    </li>
+                    <li>
+                        <span class="rank-num">2</span>
+                        <a href="#" class="rank-link">明朝那些事儿：万历十五年</a>
+                    </li>
+                    <li>
+                        <span class="rank-num">3</span>
+                        <a href="#" class="rank-link">古埃及金字塔的建造之谜</a>
+                    </li>
+                    <li>
+                        <span class="rank-num">4</span>
+                        <a href="#" class="rank-link">美国独立战争的幕后故事</a>
+                    </li>
+                    <li>
+                        <span class="rank-num">5</span>
+                        <a href="#" class="rank-link">晚清四大名臣的成败启示</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门标签</h3>
+                <div class="hot-tag-cloud">
+                    <a href="#" class="hot-tag">三国</a>
+                    <a href="#" class="hot-tag">唐朝</a>
+                    <a href="#" class="hot-tag">明朝</a>
+                    <a href="#" class="hot-tag">清朝</a>
+                    <a href="#" class="hot-tag">二战</a>
+                    <a href="#" class="hot-tag">拿破仑</a>
+                    <a href="#" class="hot-tag">孔子</a>
+                    <a href="#" class="hot-tag">丝绸之路</a>
+                    <a href="#" class="hot-tag">文艺复兴</a>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">历史小测验</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">你知道“丝绸之路”最早是由谁开通的吗？</p>
+                <a href="#" class="btn btn-outline" style="width: 100%;">参与测试</a>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<section class="feature-section">
+    <div class="container">
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📜</div>
+                <h4 class="feature-title">严谨考据</h4>
+                <p class="feature-desc">每一篇文章都基于正史与权威文献，拒绝野史与谣言。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📖</div>
+                <h4 class="feature-title">通俗解读</h4>
+                <p class="feature-desc">用现代人的语言讲述过去的故事，让历史不再枯燥。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌍</div>
+                <h4 class="feature-title">全球视野</h4>
+                <p class="feature-desc">不仅关注中国历史，更致力于世界文明的横向对比。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💡</div>
+                <h4 class="feature-title">以史为鉴</h4>
+                <p class="feature-desc">从历史中汲取智慧，为现代生活提供参考与借鉴。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>你好历史君</h3>
+                <p style="margin-bottom: 1rem; opacity: 0.8;">
+                    您的历史知识加油站。我们专注于提供高质量的历史科普内容，帮助您在繁忙的生活中，抽丝剥茧，探寻历史的真相与乐趣。
+                </p>
+                <div class="hot-tag-cloud" style="justify-content: flex-start;">
+                    <a href="#" class="hot-tag">关注我们</a>
+                    <a href="#" class="hot-tag">加入社群</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>栏目导航</h4>
+                <ul>
+                    <li><a href="#">历史人物</a></li>
+                    <li><a href="#">朝代兴衰</a></li>
+                    <li><a href="#">世界历史</a></li>
+                    <li><a href="#">历史解密</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">关于你好历史君</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>热门专题</h4>
+                <ul>
+                    <li><a href="#">民国往事</a></li>
+                    <li><a href="#">古代战争</a></li>
+                    <li><a href="#">历史文物</a></li>
+                    <li><a href="#">世界奇观</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 你好历史君 版权所有 | 仅供展示使用</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
